@@ -87,7 +87,7 @@ And on the premium version there is a lot of features like:
 - Working newsletter subscription using mailchimp
 - Recommanded section on all pages
 
-if you realy want the premium version click [here](https://themeptation.net/bbloog-premium-blog-template-using-nextjs-and-tailwind-css)
+if you realy want the premium version click [here](https://themeptation.gumroad.com/l/bbloog?option=a9kQcLJ6ts_CBJlbTJGKow%3D%3D&_gl=1*1pzzdjy*_ga*OTg5MTQzMjAyLjE2NzQzOTgxODg.*_ga_6LJN6D94N6*MTY3NDQwMjYxNC4xMjYuMS4xNjc0NDAyNzMwLjAuMC4w)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -148,7 +148,7 @@ You need to install npm if it's not installed.
 
 This template is carefully crafted to be used as a blog (free version with 2 pages)
 
-_For the premium version click [here](https://themeptation.net/bbloog-premium-blog-template-using-nextjs-and-tailwind-css)_
+_For the premium version click [here](https://themeptation.gumroad.com/l/bbloog?option=a9kQcLJ6ts_CBJlbTJGKow%3D%3D&_gl=1*1pzzdjy*_ga*OTg5MTQzMjAyLjE2NzQzOTgxODg.*_ga_6LJN6D94N6*MTY3NDQwMjYxNC4xMjYuMS4xNjc0NDAyNzMwLjAuMC4w)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

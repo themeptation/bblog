@@ -44,7 +44,7 @@ const Nav = () => {
     if (currentTheme === "dark") {
       return (
         <SunIcon
-          className="w-5 text-yellow-500"
+          className="w-5 ml-5 text-yellow-500"
           role="button"
           onClick={() => setTheme("light")}
         />
@@ -52,7 +52,7 @@ const Nav = () => {
     }
     return (
       <MoonIcon
-        className="w-5 text-gray-900"
+        className="w-5 ml-5 text-gray-900"
         role="button"
         onClick={() => setTheme("dark")}
       />
@@ -90,6 +90,14 @@ const Nav = () => {
                 <Link href={link}>{name}</Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="https://themeptation.gumroad.com/l/bbloog?option=a9kQcLJ6ts_CBJlbTJGKow%3D%3D&_gl=1*1pzzdjy*_ga*OTg5MTQzMjAyLjE2NzQzOTgxODg.*_ga_6LJN6D94N6*MTY3NDQwMjYxNC4xMjYuMS4xNjc0NDAyNzMwLjAuMC4w"
+                className="btn btn-xs"
+              >
+                Get premium version
+              </Link>
+            </li>
           </ul>
         </nav>
         {renderThemeChanger()}

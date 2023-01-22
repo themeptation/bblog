@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+  @apply inline-flex items-center h-16 gap-1 px-8 py-2 font-semibold text-white capitalize transition duration-300 bg-black rounded-full dark:bg-white dark:text-black hover:bg-indigo-600 hover:dark:hover:bg-indigo-600 hover:dark:text-white disabled:bg-slate-300;
+}

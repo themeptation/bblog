@@ -1,0 +1,3 @@
+.markdown {
+  @apply mx-auto text-xl prose dark:prose-invert prose-blockquote:text-5xl prose-blockquote:not-italic prose-blockquote:border-0 prose-blockquote:text-center prose-blockquote:leading-tight;
+}

@@ -2,9 +2,15 @@
 
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  MoonIcon,
+  SunIcon,
+  XMarkIcon,
+} from "@heroicons/react/24/outline";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { Popover } from "@headlessui/react";
 
 const links = [
   {
@@ -66,41 +72,76 @@ const Nav = () => {
   };
 
   return (
-    <header className="flex items-center px-5 py-5 mb-20 sm:px-8">
-      <Link href="/" className="block w-auto max-h-[26px]">
-        <Image
-          src={
-            currentTheme() === "dark"
-              ? "/assets/logo-dark.svg"
-              : "/assets/logo.svg"
-          }
-          alt="bbloog logo"
-          width={120}
-          height={81}
-        />
-      </Link>
-      <div className="flex gap-1 ml-auto">
-        <nav>
-          <ul className="flex gap-5 mr-1 heading-color lg:flex">
-            {links?.map(({ name, link }) => (
-              <li
-                className="block p-2 text-base font-medium capitalize cursor-pointer"
-                key={name}
-              >
-                <Link href={link}>{name}</Link>
-              </li>
-            ))}
-            <li>
+    <header className="py-10 mb-20">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <nav className="relative z-50 flex justify-between">
+          <div className="flex items-center w-full lg:gap-x-12">
+            <Link href="/" className="block w-auto max-h-[26px]">
+              <Image
+                src={
+                  currentTheme() === "dark"
+                    ? "/assets/logo-dark.svg"
+                    : "/assets/logo.svg"
+                }
+                alt="bbloog logo"
+                width={120}
+                height={81}
+              />
+            </Link>
+            <div className="hidden ml-auto lg:flex lg:gap-x-6">
+              {links?.map(({ name, link }) => (
+                <Link
+                  href={link}
+                  className="block p-2 text-base font-medium capitalize cursor-pointer"
+                  key={name}
+                >
+                  {name}
+                </Link>
+              ))}
               <Link
                 href="https://themeptation.gumroad.com/l/bbloog?option=a9kQcLJ6ts_CBJlbTJGKow%3D%3D&_gl=1*1pzzdjy*_ga*OTg5MTQzMjAyLjE2NzQzOTgxODg.*_ga_6LJN6D94N6*MTY3NDQwMjYxNC4xMjYuMS4xNjc0NDAyNzMwLjAuMC4w"
                 className="btn btn-xs"
               >
                 Get premium version
               </Link>
-            </li>
-          </ul>
+              {renderThemeChanger()}
+            </div>
+          </div>
+          <div className="flex items-center gap-x-5 lg:gap-x-8 lg:hidden">
+            {renderThemeChanger()}
+            <div className="-mr-1">
+              <Popover>
+                <Popover.Button className="relative z-10 flex items-center justify-center w-8 h-8 focus:outline-none">
+                  {({ open }) => (
+                    <>
+                      {open ? (
+                        <XMarkIcon className="overflow-visible h-7 w-7 stroke-slate-700" />
+                      ) : (
+                        <Bars3Icon className="overflow-visible h-7 w-7 stroke-slate-700" />
+                      )}
+                    </>
+                  )}
+                </Popover.Button>
+                <div>
+                  <Popover.Overlay className="fixed inset-0 opacity-100 bg-slate-300/50" />
+                  <Popover.Panel className="absolute inset-x-0 flex flex-col p-4 mt-4 text-lg tracking-tight origin-top scale-100 bg-white shadow-xl opacity-100 top-full rounded-2xl text-slate-900 ring-1 ring-slate-900/5">
+                    {links?.map(({ name, link }) => (
+                      <Link href={link} className="block w-full p-2" key={name}>
+                        {name}
+                      </Link>
+                    ))}
+                    <Link
+                      href="https://themeptation.gumroad.com/l/bbloog?option=a9kQcLJ6ts_CBJlbTJGKow%3D%3D&_gl=1*1pzzdjy*_ga*OTg5MTQzMjAyLjE2NzQzOTgxODg.*_ga_6LJN6D94N6*MTY3NDQwMjYxNC4xMjYuMS4xNjc0NDAyNzMwLjAuMC4w"
+                      className="btn"
+                    >
+                      Get premium version
+                    </Link>
+                  </Popover.Panel>
+                </div>
+              </Popover>
+            </div>
+          </div>
         </nav>
-        {renderThemeChanger()}
       </div>
     </header>
   );
